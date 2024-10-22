@@ -46,10 +46,6 @@ h2 {
 	width: 100vw;
 }
 
-.header-content p {
-	max-width: 80ch;
-}
-
 .about-me {
 	display: flex;
 	align-items: center;
@@ -166,11 +162,6 @@ a:visited{
 
 @media (min-width: 976px) {
     .card-container {
-        max-width: 80ch;
         grid-template-columns: repeat(auto-fit, minmax(13.75em, 1fr));
-    }
-
-    .header-content p{
-        max-width: 80ch;
     }
 }
