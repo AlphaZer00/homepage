@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+html {
+    height: 100vh;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Roboto", sans-serif;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
     background-color: white;
-    min-height: 100vh;
 }
 
 h1,
@@ -30,6 +36,7 @@ h2 {
 	background-color: #00171f;
 	box-shadow: rgba(0, 0, 0, 0.65) 0px 5px 15px;
 	transform: skewY(-7deg);
+    width: 99%;
 }
 
 .header-content > * {
@@ -60,7 +67,6 @@ main {
 	gap: 1rem;
 	margin-top: 0.5rem;
     max-width: 80ch;
-
 }
 
 .card {
@@ -80,6 +86,7 @@ footer {
     flex-direction: column;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.65) 0px -2px 15px;
+    color: white;
 }
 
 footer h1 {
@@ -93,11 +100,77 @@ footer h1 {
     margin-top: auto;
 }
 
-svg {
+.footer-content * {
+    margin: .3rem 0px;
+}
+
+.icon {
     height: 24px;
     transition: transform .1s  ease-in;
 }
 
-svg:hover {
+.icon:hover {
     transform: scale(1.1);
+}
+
+.email-link {
+    transition: transform .1s  ease-in;
+}
+
+.email-link:hover {
+    transform: scale(1.04) translateX(.6em);
+}
+
+.email a{
+    display: flex;
+    align-items: center;
+}
+
+a:link{
+    color: white;
+}
+
+a:visited{
+    color: #B48CC5;
+}
+
+@media (max-width: 480px) {
+    main{
+        max-width: 480px;;
+    }
+
+    .card-container {
+        max-width: 90vw;
+        grid-template-columns: repeat(auto-fit, minmax(90vw, 1fr));
+    }
+
+    .header-content p, .footer-content{
+        max-width: 90vw;
+    }
+}
+
+@media (min-width: 481px) {
+    main{
+        max-width: min(90vw, 80ch);
+    }
+
+    .card-container {
+        max-width: 80ch;
+        grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+    }
+
+    .header-content p, .footer-content {
+        max-width: min(90vw, 80ch);
+    }
+}
+
+@media (min-width: 976px) {
+    .card-container {
+        max-width: 80ch;
+        grid-template-columns: repeat(auto-fit, minmax(13.75em, 1fr));
+    }
+
+    .header-content p{
+        max-width: 80ch;
+    }
 }
